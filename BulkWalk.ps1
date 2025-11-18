@@ -4,7 +4,7 @@ if (-not ([AppDomain]::CurrentDomain.GetAssemblies() | Where-Object { $_.FullNam
     Add-Type -Path $libPath
 }
 
-$ip = "192.168.209.44"
+$ip = "192.168.209.44"    #Change to address of printer
 $community = "public"
 #$timeout = 5000
 $version = [Lextm.SharpSnmpLib.VersionCode]::V2
@@ -46,3 +46,4 @@ Write-Host "Starting manual SNMP walk..."
         Write-Warning "SNMP walk failed: $($_.Exception.Message)"
         break
     }
+
